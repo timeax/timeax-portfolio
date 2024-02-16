@@ -1,0 +1,41 @@
+&-titlebar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    color: color-get(theme, title);
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        line-height: 1.3;
+        font-family: Poppins;
+    }
+
+    &~p {
+        padding-right: 5rem;
+    }
+
+    &-small {
+        &~p {
+            padding-right: 2rem;
+        }
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    .line-dash {
+        // border: 2px solid color-get(theme, theme);
+        height: 0;
+        width: 1.5rem;
+        margin-right: 8px;
+    }
+    .sub-heading {
+        display: flex;
+        text-transform: uppercase;
+        align-items: center;
+        font-size: 12px;
+    }
+}

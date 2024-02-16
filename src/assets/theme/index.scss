@@ -1,0 +1,64 @@
+@import "./util/fonts";
+@import "./util/colors";
+
+$border: 1px solid color-get(theme, transparentGrey);
+
+$breakpoints: (
+    "xxs-mobile": 320px,
+    "xs-mobile": 360px,
+    "mobile": 375px,
+    "xxs-tablet": 414px,
+    "xs-tablet": 576px,
+    "sm-tablet": 768px,
+    "tablet": 992px,
+    "xxs-laptop": 1024px,
+    "xs-laptop": 1280px,
+    "sm-laptop": 1366px,
+    "laptop": 1536px,
+    "monitor": 1920px,
+) !default;
+
+@import "./util/querys";
+
+body {
+    font-family: Poppins;
+    background-color: color-get(theme, dark);
+    color: color-get(theme, text);
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: color-get(theme, "theme");
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @import "./components/container";
+}
+
+
+.ui {
+    @import "./components/typography";
+    @import "./components/titlebar";
+    @import "./components/button";
+    @import "./components/landing";
+    @import './components/section';
+}
+
+
+@import './ui/home';
+
+.footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    // background-color: rgb(232, 232, 232);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

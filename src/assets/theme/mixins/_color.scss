@@ -1,0 +1,50 @@
+// define globally somewhere in your setup
+$COLORS: ();
+
+// use mixin to define colors groups by e.g. element name
+// example: @include color-set(cool-table, bg, #ff0000);
+// or pass in a map to define multiple colors at once
+// example: @include color-set(cool-table, ( bg: #ff0000, border: #00ff00));
+@mixin color-set($group-name, $color-name, $color-value: false) {
+    @if (type-of($color-name) == map) {
+        @each $name, $value in $color-name {
+            @include define-color($group-name, $name, $value);
+        }
+    } @else {
+        @include define-color($group-name, $color-name, $color-value);
+    }
+}
+
+@mixin define-color($group-name, $name, $value) {
+    $group: ();
+    //---------
+    @if (map-has-key($COLORS, $group-name)) {
+        $group: map-get($COLORS, $group-name);
+    }
+    
+    $group: map-merge(
+        $group,
+        (
+            $name: $value,
+        )
+    );
+    $COLORS: map-merge(
+        $COLORS,
+        (
+            $group-name: $group,
+        )
+    ) !global;
+}
+
+// access color values anywhere with this function by passing in
+// element name and color identifier
+// example: $bg-color: color-get(cool-table, bg);
+@function color-get($group-name, $color-name) {
+    @if (map-has-key($COLORS, $group-name)) {
+        $group: map-get($COLORS, $group-name);
+        @if (map-has-key($group, $color-name)) {
+            @return map-get($group, $color-name);
+        }
+    }
+    @return false;
+}

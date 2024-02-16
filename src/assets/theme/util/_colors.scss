@@ -1,0 +1,82 @@
+@import "../mixins/color";
+
+@include color-set(
+    "theme",
+    (
+        light: #fff,
+        dark: #14151a,
+        theme: #6323e5,
+        text: #f0f0f0,
+        grey2: #828282,
+        paragraph: #b3b3b3,
+        theme2: #172031e3,
+        transparentGrey: #4d4d4d4e
+    )
+);
+
+
+@include color-set(
+    "theme",
+    (
+        light: #fff,
+        dark: #fff2f2,
+        theme: #6323e5,
+        text: #e9e9e9,
+        grey2: #828282,
+        paragraph: #8f8f8f,
+        theme2: #172031e3,
+        transparentGrey: #4d4d4d7a,
+        title: rgb(212, 212, 212)
+    )
+);
+
+@include color-set(
+    "theme",
+    (
+        light: #333333,
+        dark: #fff,
+        theme: #e7004d,
+        text: #222222,
+        grey2: #828282,
+        grey3: rgb(61, 61, 61),
+        paragraph: #505050,
+        theme2: #130102e3,
+        transparentGrey: #be47476e,
+        title: rgb(92, 0, 0)
+    )
+);
+
+@include color-set(
+    "links",
+    (
+        light: #fff,
+        dark: #1d1d1d,
+    )
+);
+
+@include color-set(
+    'button', 
+    (
+        background: color-get(theme, theme),
+        color: color-get(theme, paragraph),
+        light: #fff,
+        default: transparent
+    )
+);
+
+
+.color-theme {
+    color: color-get(theme, theme) !important
+}
+
+.color-grey {
+    color: color-get(theme, grey2)
+}
+
+.color-text {
+    color: color-get(theme, text)
+}
+
+.color-p {
+    color: color-get(theme, paragraph)
+}

@@ -1,0 +1,70 @@
+&-button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 0 2.3rem;
+    font-size: 16px;
+    line-height: 3;
+    display: flex;
+    color: color-get(button, color);
+    align-items: center;
+    cursor: pointer;
+
+    &-smooth {
+        border-radius: 999px;
+    }
+
+    &-circle {
+        border-radius: 50%;
+    }
+
+    &-responsive {
+        @include media("<=tablet") {
+        }
+    }
+
+    &-outline {
+        border: 1px solid color-get(button, background);
+    }
+
+    &-contained {
+        &.theme {
+            background-color: color-get(button, background);
+            color:  color-get(button, light);
+        } 
+
+        &.theme2 {
+            background-color: color-get(theme, theme2);
+            color:  color-get(button, light);
+        } 
+    }
+
+    $pos: (
+        left: -1,
+        right: 3,
+        top: -1,
+        bottom: 3,
+    );
+
+    $opp: (
+        left: right,
+        top: bottom,
+        right: left,
+        bottom: top,
+    );
+
+    &-icon {
+        padding: 0 2.5rem;
+        &_container {
+            display: flex;
+        }
+
+        @each $item, $loc in $pos {
+            &-#{$item} &_container {
+                order: $loc;
+                margin-#{map-get($opp, $item)}: 10px;
+            }
+        }
+    }
+}

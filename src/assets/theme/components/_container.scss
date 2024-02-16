@@ -1,0 +1,21 @@
+.container {
+    margin: 0 auto;
+    padding: 0px 6px;
+    width: 100%;
+
+    @include media('<=monitor') {
+        max-width: 1800px;
+    }
+
+    @include media('<=laptop') {
+        max-width: 1260px;
+    }
+
+    @include media('<=sm-laptop') {
+        max-width: 1200px;
+    }
+
+    @include media('<=xs-laptop') {
+        max-width: 1084px;
+    }
+}

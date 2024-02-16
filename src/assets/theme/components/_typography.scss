@@ -1,0 +1,65 @@
+&-banner-title {
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Poppins ExtraBold';
+    color: color-get(theme, grey3);
+    text-transform: capitalize;
+
+    @include media('<=xs-laptop') {
+        font-size: 55px;
+    }
+
+    @include media('<=xxs-laptop') {
+        font-size: 48px;
+        font-family: 'Poppins Bold';
+    }
+}
+
+&-title {
+    font-size: 45px;
+    font-weight: 0;
+    font-family: 'Poppins Bold';
+    text-transform: capitalize;
+    color: color-get(theme, title);
+
+    @include media('<=xxs-laptop') {
+        font-size: 35px;
+        font-family: 'Poppins SemiBold';
+    }
+}
+
+&-small_text {
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+&-subtitle {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+&-paragraph {
+    font-size: 15px;
+    color: color-get(theme, paragraph);
+}
+
+&-typography {
+    display: block;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.caps {
+    text-transform: capitalize;
+}
+
+.text-normal {
+    text-transform: none;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}

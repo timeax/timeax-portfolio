@@ -1,0 +1,45 @@
+&-section {
+    padding: 4rem 0;
+    position: relative;
+    &-btn {
+        padding: 0;
+        color: color-get(theme, theme);
+        text-transform: capitalize;
+        margin-top: 2rem;
+
+        .ui-btn-icon {
+            margin-left: 2rem;
+        }
+    }
+
+    .skewed {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        display: flex;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        span {
+            width: 20rem;
+            height: 100%;
+            background-color: #202020;
+            transform: skew(-20deg);
+            margin: auto;
+        }
+    }
+
+    .classic-line {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        left: 0;
+        span {
+            border: 2px solid color-get(theme, transparentGrey);
+            width: 5rem;
+        }
+    }
+}

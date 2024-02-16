@@ -1,0 +1,224 @@
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.215);
+}
+header {
+    display: flex;
+    background-color: rgba(235, 213, 213, 0.103);
+    // border-bottom: 1px solid rgba(66, 66, 66, 0.41);
+}
+
+$padding: 2rem;
+
+.navbar {
+    flex-grow: 1;
+    &-brand {
+        font-size: 20px;
+        a {
+            color: color-get(theme, "light");
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    &-nav {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    &-item {
+        a {
+            padding: $padding 1.8rem;
+            color: color-get(theme, "grey2");
+            font-size: 15px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        &:hover {
+            cursor: pointer;
+            a {
+                color: color-get(theme, theme);
+            }
+        }
+
+        &.current {
+            a {
+                color: color-get(theme, text);
+            }
+        }
+    }
+}
+
+&-banner {
+    margin-top: 6rem;
+    .container {
+        position: relative;
+        display: flex;
+    }
+
+    &-title {
+        margin: 0;
+        z-index: 99999999;
+    }
+
+    .background-text {
+        font-size: 150px;
+        position: absolute;
+        color: rgba(192, 0, 0, 0.1);
+        margin: 0;
+        top: -7rem;
+        left: 20%;
+        pointer-events: none;
+    }
+
+    .banner {
+        &-main {
+            position: relative;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            p {
+                padding-right: 10rem;
+            }
+
+            .scroller {
+                margin-top: 5rem;
+                p {
+                    font-size: 13px;
+                }
+                .mouse {
+                    font-size: 25px;
+                    color: color-get(theme, theme);
+                }
+            }
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            align-self: flex-end;
+            margin-left: 5rem;
+        }
+    }
+
+    .call-to-action {
+        display: flex;
+        width: 100%;
+        margin-top: 3rem;
+        font-size: 15px;
+        button {
+            // font-weight: 600;
+            line-height: 4;
+            padding: 0 3.5rem;
+            border-radius: 999px;
+            font-size: 15px;
+            color: white;
+        }
+    }
+
+    .watch-intro {
+        padding: 0 1.5rem !important;
+        margin-left: 2rem;
+        line-height: 3.5;
+
+        .ui-button-text {
+            color: black;
+        }
+    }
+
+    .ui-button-icon_container {
+        background-color: color-get(theme, theme);
+        padding: 10px;
+        border-radius: 50%;
+    }
+}
+
+&-carousel {
+    .content {
+        display: flex;
+        width: 60%;
+        margin-right: 2rem;
+        span {
+            color: color-get(theme, text);
+        }
+    }
+    button {
+        border-radius: 50%;
+        padding: 1.2rem;
+        display: flex !important;
+        align-items: center;
+        cursor: pointer;
+
+        color: white;
+    }
+    .ui-button-icon_container {
+        padding: 0px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+    }
+}
+
+.header-sidebar {
+    position: absolute;
+    z-index: 999;
+    // border-right: 1px solid rgba(200, 200, 200, 0.215);
+    width: 5rem;
+    height: 100%;
+    color: color-get(theme, grey2);
+
+    button {
+        cursor: pointer;
+        color: inherit;
+        svg {
+            color: color-get(theme, theme);
+        }
+        &:hover {
+            svg {
+                color: color-get(theme, theme2);
+            }
+        }
+    }
+
+    .app-logo {
+        font-size: 30px;
+        padding: $padding 0px;
+        color: color-get(theme, theme);
+    }
+
+    .sidebar-line {
+        flex-grow: 1;
+        margin-bottom: 4rem;
+        border: 2px solid color-get(theme, transparentGrey);
+    }
+
+    .transfix {
+        transform: rotate(-90deg);
+        width: 17rem;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        // display: none;
+    }
+}
+
+#earth {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: -15%;
+    opacity: 0.2;
+    // background: radial-gradient(color-get(theme, theme), color-get(theme, dark));
+}

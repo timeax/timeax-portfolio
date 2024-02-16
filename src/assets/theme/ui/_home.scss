@@ -1,0 +1,40 @@
+.any-query {
+    border-bottom: $border;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding: 0 2rem !important;
+
+    svg {
+        color: color-get(theme, dark);
+        height: fit-content;
+        font-size: 60px !important;
+    }
+
+    p {
+        line-height: normal;
+        text-align: center;
+        color: color-get(theme, grey2)
+    }
+
+    h4 {
+        text-transform: capitalize;
+        font-family: Poppins;
+        font-weight: 100;
+        color: color-get(theme, dark);
+        font-size: 20px;
+        margin-bottom: .8rem;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.skills-section {
+    background: color-get(theme, theme2);
+    padding: 6rem 0;
+}
